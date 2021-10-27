@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sign up Form</title>
+    <link type="text/css" rel="stylesheet" href="assets/css/signup.css" />
+    <script type="text/javascript" src="assets/javascript/script.js"></script>
+    <script type="text/javascript">
+      function onLoad() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const firstName = urlParams.get('firstName');
+        const phoneNumber = urlParams.get('phoneNumber');
+        document.getElementById('firstName').innerHTML =
+          '<strong>' + firstName + '</strong>';
+
+        document.getElementById('phoneNumber').innerHTML =
+          '<strong>' + phoneNumber + '</strong>';
+
+        const verificationCode = sessionStorage.getItem('verificationCode');
+        if (verificationCode) {
+          document.getElementById('verificationCode').innerHTML =
+            '<strong>' + verificationCode + '</strong>';
+        } else {
+          window.location.href = 'index.html';
+        }
+      }
+    </script>
+  </head>
+  <body onload="onLoad()">
+    <div class="main">
+      <div class="box">
+        <div class="" id="varifyOTP">
+          <div id="message">
+            Dear <span id="firstName"></span> Thank you for your inquiry. A 4
+            digit verification number has been sent to your phone number:
+            <span id="phoneNumber"></span>, please enter in the following box
+            and submit for confirmation (Your OTP is
+            <span id="verificationCode"></span>)
+          </div>
+          <div class="row">
+            <label for="email">Email</label>
+            <div class="form-control">
+              <input
+                type="text"
+                name="code"
+                id="code"
+                value=""
+                placeholder="Please enter your OTP"
+                required
+                maxlength="4"
+              />
+              <p id="codeError" class="error"></p>
+            </div>
+          </div>
+
+          <div class="row">
+            <button type="reset" class="resetBtn">Reset</button>
+            <button type="button" class="submitBtn" onclick="verifyOtp()">
+              Submit
+            </button>
+          </div>
+        </div>
+        <div class="none" id="successMsg">Validation Successful!</div>
+      </div>
+    </div>
+  </body>
+</html>

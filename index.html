@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sign up Form</title>
+    <link type="text/css" rel="stylesheet" href="assets/css/signup.css" />
+    <script type="text/javascript" src="assets/javascript/script.js"></script>
+    <script type="text/javascript"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="box">
+        <div id="registerBox">
+          <form name="register" id="register" method="POST">
+            <h1>Register</h1>
+            <div class="row">
+              <label for="fullName">Full Name</label>
+              <div class="form-control">
+                <input
+                  type="text"
+                  name="fullName"
+                  id="fullName"
+                  placeholder="Please enter your full name"
+                  value=""
+                  onchange="handleChange()"
+                  onkeyup="handleChange()"
+                />
+                <p id="fullNameError" class="error"></p>
+              </div>
+            </div>
+            <div class="row">
+              
+              <label for="emailId">Email</label>
+              <div class="form-control">
+                <input
+                  type="text"
+                  name="emailId"
+                  id="emailId"
+                  value=""
+                  onchange="CheckEmail()"
+                  onkeyup="CheckEmail()"
+                  placeholder="Please enter your email"
+                />
+                <p id="emailIdError" class="error"></p>
+              </div>
+            </div>
+            <div class="row">
+              <label for="phoneNumber">Phone Number</label>
+              <div class="form-control">
+                <input
+                  type="text"
+                  name="phoneNumber"
+                  id="phoneNumber"
+                  value=""
+                  placeholder="(123)-456-7890"
+                  onkeyup="validatePhone()"
+                />
+                <p id="phoneNumberError" class="error"></p>
+                <img
+                  src="assets/images/jio.png"
+                  alt="jio"
+                  id="jio"
+                  class="none logo"
+                />
+                <img
+                  src="assets/images/idea.png"
+                  alt="idea"
+                  id="idea"
+                  class="none logo"
+                />
+                <img
+                  src="assets/images/vodaphone.png"
+                  alt="vodaphone"
+                  id="vodaphone"
+                  class="none logo"
+                />
+                <span id="state"></span>
+              </div>
+            </div>
+
+            <div class="row">
+              <button type="reset" class="resetBtn">Reset Form</button>
+              <button type="button" class="submitBtn" onclick="registerUser()">
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

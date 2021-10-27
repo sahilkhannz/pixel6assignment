@@ -1,0 +1,61 @@
+.main {
+  display: flex;
+  justify-content: center;
+}
+
+.box {
+  width: 700px;
+  border: 5px dotted black;
+  padding: 50px;
+}
+
+.box h1 {
+  text-align: left;
+  border-bottom: 5px solid black;
+  color: green;
+}
+
+.row {
+  margin-bottom: 10px;
+}
+
+.form-control input {
+  width: 90%;
+  padding: 5px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+}
+
+button.resetBtn {
+  border: 1px solid #ccc;
+  background: none;
+  padding: 5px;
+  width: 100px;
+  background: red;
+}
+
+button.submitBtn :hover {
+  border: 1px solid chartreuse;
+  background: chartreuse;
+  padding: 5px;
+  width: 100px;
+}
+
+#firstNameError {
+  display: none;
+}
+.error {
+  color: red;
+}
+
+.form-control input:hover {
+  border-color: black;
+}
+
+#emailIdError {
+  display: none;
+}
+
+.none {
+  display: none;
+}
